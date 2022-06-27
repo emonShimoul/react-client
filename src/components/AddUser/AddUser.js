@@ -9,7 +9,6 @@ const AddUser = () => {
         const email = emailRef.current.value;
 
         const newUser = {name: name, email: email};
-        console.log(newUser);
 
         fetch('http://localhost:5000/users', {
             method: 'POST',

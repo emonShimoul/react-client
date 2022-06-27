@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
-    console.log(users);
 
     useEffect(() => {
         fetch('http://localhost:5000/users')
