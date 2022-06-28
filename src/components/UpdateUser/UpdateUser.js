@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const UpdateUser = () => {
     const {id} = useParams();
+    const [user, setUser] = useState({});
 
     useEffect(() => {
         const url = `http://localhost:5000/users/${id}`;
         fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setUser(data))
     }, []);
 
     return (
         <div>
-            <h2>Update User:</h2>
+            <h2>Update User: {user.name} - {user.email}</h2>
             <p><small>{id}</small></p>
         </div>
     );
