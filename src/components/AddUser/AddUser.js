@@ -20,6 +20,9 @@ const AddUser = () => {
         .then(res => res.json())
         .then(data => console.log(data))
 
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+
         e.preventDefault();
     }
 
