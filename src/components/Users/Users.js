@@ -18,6 +18,8 @@ const Users = () => {
         .then(data => {
             if(data.deletedCount > 0){
                 alert("deleted successfully!!");
+                const remainingUsers = users.filter(user => user._id !== id);
+                setUsers(remainingUsers);
             }
         })
     }
